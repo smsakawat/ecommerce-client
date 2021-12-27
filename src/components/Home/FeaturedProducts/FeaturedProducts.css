@@ -1,0 +1,9 @@
+.featured_title {
+  text-align: center;
+  font-family: "Roboto";
+  border-bottom: 1px solid rgba(21, 21, 21, 0.5);
+  width: 25vmax;
+  padding: 1vmax;
+  margin: 5vmax auto;
+  color: rgba(0, 0, 0, 0.7);
+}
