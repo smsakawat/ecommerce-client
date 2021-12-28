@@ -1,4 +1,4 @@
-import MouseIcon from "@mui/icons-material/Mouse";
+// import MouseIcon from "@mui/icons-material/Mouse";
 import React from "react";
 import "./Banner.css";
 
@@ -8,10 +8,9 @@ const Banner = () => {
       <div className="banner">
         <p>WELCOME TO Ecommerce</p>
         <h1>FIND AMAZING PRODUCTS BELOW</h1>
-        <a href="#container">
+        <a href="#featuredSection">
           <button>
-            Scroll{" "}
-            <MouseIcon sx={{ fontSize: "1.15vmax", paddingTop: "0.1rem" }} />
+            Scroll <i className="fas fa-mouse"></i>
           </button>
         </a>
       </div>

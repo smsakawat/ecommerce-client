@@ -7,3 +7,9 @@
   margin: 5vmax auto;
   color: rgba(0, 0, 0, 0.7);
 }
+.fearutedContainer {
+  display: flex;
+  width: 80vw;
+  margin: 2vmax auto;
+  flex-wrap: wrap;
+}
