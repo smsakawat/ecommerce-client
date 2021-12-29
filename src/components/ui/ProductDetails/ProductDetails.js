@@ -2,16 +2,20 @@ import { Rating } from "@material-ui/lab";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Slider from "react-slick";
 import {
   clearErrors,
   getProductDetails,
 } from "../../../redux/actions/productAction";
+import ReviewCard from "../ReviewCard/ReviewCard";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { product, error } = useSelector((state) => state.productDetails);
+  const { product, loading, error } = useSelector(
+    (state) => state.productDetails
+  );
 
   useEffect(() => {
     if (error) {
@@ -27,6 +31,16 @@ const ProductDetails = () => {
     value: 3,
     readOnly: true,
     precision: 0.5,
+  };
+
+  //   Slick Settings
+  let settings = {
+    arrows: false,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: window.innerWidth > 650 ? 3 : 2,
+    slidesToScroll: 1,
   };
 
   return (
@@ -78,10 +92,22 @@ const ProductDetails = () => {
           <div className="detailsBlock-4">
             Description : <p>{product.description}</p>
           </div>
-
           <button className="submitReview">Submit Review</button>
         </div>
       </div>
+      <h3 className="reviewsHeading">REVIEWS</h3>
+      {product.reviews && product.reviews[0] ? (
+        <div className="reviews">
+          <Slider {...settings}>
+            {product.reviews &&
+              product.reviews.map((review, index) => (
+                <ReviewCard key={index} review={review} />
+              ))}
+          </Slider>
+        </div>
+      ) : (
+        <p className="noReviews">No Reviews Yet</p>
+      )}
     </>
   );
 };
