@@ -28,6 +28,7 @@ const ProductDetails = () => {
               product.images.map((imgItem, index) => (
                 <>
                   <img
+                    key={index}
                     src={imgItem.url}
                     alt={`${index} Slide`}
                     className="carouselImage"

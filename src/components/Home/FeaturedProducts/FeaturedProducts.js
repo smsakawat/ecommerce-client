@@ -20,7 +20,7 @@ const FeaturedProducts = () => {
       dispatch(clearErrors());
     }
     dispatch(getProduct());
-  }, []);
+  }, [dispatch, alert, error]);
   return (
     <>
       {loading ? (
