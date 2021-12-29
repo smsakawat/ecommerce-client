@@ -1,5 +1,6 @@
 import { Rating } from "@material-ui/lab";
 import React, { useEffect } from "react";
+import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Slider from "react-slick";
@@ -18,13 +19,14 @@ const ProductDetails = () => {
     (state) => state.productDetails
   );
 
+  const alert = useAlert();
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
     dispatch(getProductDetails(id));
-  }, []);
+  }, [error, id, dispatch, alert]);
 
   //   Rating options
   const options = {
