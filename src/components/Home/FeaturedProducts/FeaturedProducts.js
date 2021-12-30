@@ -3,7 +3,7 @@ import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, getProduct } from "../../../redux/actions/productAction";
 import Loader from "../../layout/Loader/Loader";
-import ProductCard from "../../ui/ProductCard/ProductCard";
+import ProductCard from "../../product/ProductCard/ProductCard";
 import "./FeaturedProducts.css";
 
 const FeaturedProducts = () => {

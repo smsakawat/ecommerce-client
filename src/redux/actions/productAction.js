@@ -6,14 +6,16 @@ import {
   CLEAR_ERRORS,
   PRODUCT_DETAILS_FAIL,
   PRODUCT_DETAILS_REQUEST,
-  PRODUCT_DETAILS_SUCCESS,
+  PRODUCT_DETAILS_SUCCESS
 } from "../constants/productConstants";
 
 // Get products for featured section
-export const getProduct = () => async (dispatch) => {
+export const getProduct = (keyword="") => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCT_REQUEST });
-    const { data } = await axios.get("http://localhost:5000/api/v1/products");
+    const { data } = await axios.get(
+      `http://localhost:5000/api/v1/products?keyword=${keyword}`
+    );
     dispatch({ type: ALL_PRODUCT_SUCCESS, payload: data });
   } catch (err) {
     // console.log(err.response);

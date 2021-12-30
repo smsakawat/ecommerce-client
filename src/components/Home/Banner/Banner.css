@@ -1,5 +1,5 @@
 .banner {
-  margin-top: -80px;
+  margin-top: -70px;
   background-image: url("../../../images/cover.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -20,7 +20,13 @@
 .banner > p {
   font: 300 1.4vmax "Lucida Sans";
 }
+.banner > a {
+  text-decoration: none;
+}
 .banner > a > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 5vmax;
   cursor: pointer;
   background-color: #fff;
@@ -31,7 +37,8 @@
   font: 500 1.2vmax "Roboto";
   transition: all 0.5s;
 }
-.banner > a > button:hover {
+.banner > a > button:hover,
+.banner > a > button:active {
   background-color: rgb(255, 255, 255, 0);
   color: #fff;
 }

@@ -13,31 +13,26 @@ export const SidebarData = [
   {
     title: "Products",
     path: "/products",
-    icon: <IoIcons.IoIosPaper />,
+    icon: <AiIcons.AiFillShopping />,
     cName: "nav-text",
   },
   {
-    title: "Products",
-    path: "/products",
-    icon: <FaIcons.FaCartPlus />,
+    title: "Search",
+    path: "/search",
+    icon: <FaIcons.FaSearch />,
     cName: "nav-text",
   },
   {
     title: "Cart",
     path: "/cart",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <IoIcons.IoMdCart />,
     cName: "nav-text",
   },
-  {
-    title: "Search",
-    path: "/messages",
-    icon: <FaIcons.FaEnvelopeOpenText />,
-    cName: "nav-text",
-  },
+
   {
     title: "Account",
     path: "/account",
-    icon: <IoIcons.IoMdHelpCircle />,
+    icon: <IoIcons.IoMdPerson />,
     cName: "nav-text",
   },
 ];
