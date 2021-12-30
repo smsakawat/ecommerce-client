@@ -9,22 +9,24 @@ import {
   PRODUCT_DETAILS_SUCCESS
 } from "../constants/productConstants";
 
-// Get products for featured section
-export const getProduct = (keyword="") => async (dispatch) => {
-  try {
-    dispatch({ type: ALL_PRODUCT_REQUEST });
-    const { data } = await axios.get(
-      `http://localhost:5000/api/v1/products?keyword=${keyword}`
-    );
-    dispatch({ type: ALL_PRODUCT_SUCCESS, payload: data });
-  } catch (err) {
-    // console.log(err.response);
-    dispatch({
-      type: ALL_PRODUCT_FAIL,
-      payload: err.response.data.message,
-    });
-  }
-};
+// Get products
+export const getProduct =
+  (keyword = "",currentPage=1) =>
+  async (dispatch) => {
+    try {
+      dispatch({ type: ALL_PRODUCT_REQUEST });
+      const url =  `http://localhost:5000/api/v1/products?keyword=${keyword}&page=${currentPage}`
+      const { data } = await axios.get(
+        url
+      );
+      dispatch({ type: ALL_PRODUCT_SUCCESS, payload: data });
+    } catch (err) {
+      dispatch({
+        type: ALL_PRODUCT_FAIL,
+        payload: err.response.data.message,
+      });
+    }
+  };
 
 // Get sigle product details
 export const getProductDetails = (id) => async (dispatch) => {

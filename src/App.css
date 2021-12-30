@@ -5,6 +5,7 @@
   scroll-behavior: smooth;
 }
 :root {
+  --tomato-color: tomato;
   --main-color: "#eb4034";
 }
 
