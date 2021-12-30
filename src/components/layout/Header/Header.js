@@ -16,10 +16,10 @@ function Navbar() {
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="navbar">
           <Link to="#" className="menu-bars" style={{ marginRight: "30px" }}>
-            <FaIcons.FaBars onClick={showSidebar} />
+            <FaIcons.FaBars onClick={showSidebar} className="menu_icon" />
           </Link>
-          <div style={{ fontWeight: "400", fontSize: "1.3rem", color: "#fff" }}>
-            <span style={{ fontWeight: "600", color: "#eb4034" }}>E </span>
+          <div style={{ font: "300 1.1rem cursive", color: "#fff" }}>
+            <span style={{ fontWeight: "600", color: "#eb4034" }}>E</span>
             COMMERCE
           </div>
         </div>

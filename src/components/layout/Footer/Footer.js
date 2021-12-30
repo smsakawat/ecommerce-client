@@ -15,9 +15,9 @@ const Footer = () => {
       <div className="midFooter">
         <div
           className="logo-title"
-          style={{ fontWeight: "400", color: "#fff" }}
+          style={{ font: "300 4vmax cursive", color: "#fff" }}
         >
-          <span style={{ fontWeight: "600", color: "#eb4034" }}>E </span>
+          <span style={{ fontWeight: "600", color: "#eb4034" }}>E</span>
           COMMERCE
         </div>
         <p>Hight Quality is our First Priority</p>
