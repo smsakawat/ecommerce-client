@@ -1,3 +1,4 @@
+import { Slider, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import Pagination from "react-js-pagination";
@@ -14,7 +15,12 @@ const Products = () => {
   const { products, loading, error, productsCount, productsPerPage } =
     useSelector((state) => state.products);
   const alert = useAlert();
+  const [price, setPrice] = useState([0, 2000]);
 
+  // change price on range
+  const priceHandler = (e, newPrice) => {
+    setPrice(newPrice);
+  };
   const [currentPage, setCurrentPageNo] = useState(1);
   // changing current page on change
   const currentPageHanlder = (e) => {
@@ -28,8 +34,8 @@ const Products = () => {
       // I could've also just retuen the alert here..but it's good practice to have a clearFunc for clearing errors
       dispatch(clearErrors());
     }
-    dispatch(getProduct(keyword, currentPage));
-  }, [dispatch, error, alert, keyword, currentPage]);
+    dispatch(getProduct(keyword, currentPage, price));
+  }, [dispatch, error, alert, keyword, currentPage, price]);
   return (
     <>
       {loading ? (
@@ -38,11 +44,28 @@ const Products = () => {
         <>
           <h2 className="productsHeading">Products</h2>
           <div className="products">
-            {products.length &&
-              products.map((product, index) => (
+            {products &&
+              products?.map((product, index) => (
                 <ProductCard key={index} product={product} />
               ))}
           </div>
+          {/* Filter by price,category & ratings */}
+          <div className="filterBox">
+            <Typography color="text.secondary" style={{ textAlign: "left" }}>
+              Price
+            </Typography>
+            <Slider
+              value={price}
+              onChange={priceHandler}
+              valueLabelDisplay="auto"
+              min={0}
+              max={2000}
+              aira-labelledby="range-slider"
+              color="info"
+            />
+          </div>
+
+          {/* Pagination */}
           {productsPerPage < productsCount && (
             <div className="paginationBox">
               <Pagination

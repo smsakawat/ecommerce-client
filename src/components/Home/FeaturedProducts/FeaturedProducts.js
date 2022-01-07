@@ -9,9 +9,7 @@ import "./FeaturedProducts.css";
 const FeaturedProducts = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { loading, error, products, productCount } = useSelector(
-    (state) => state.products
-  );
+  const { loading, error, products } = useSelector((state) => state.products);
   // load products
   useEffect(() => {
     // Showing alert if any errors happen while loading products
