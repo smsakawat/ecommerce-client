@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { clearErrors, getProduct } from "../../../redux/actions/productAction";
 import Loader from "../../layout/Loader/Loader";
+import MetaData from "../../layout/MetaData/MetaData";
 import ProductCard from "../ProductCard/ProductCard";
 import "./Products.css";
 
@@ -50,6 +51,7 @@ const Products = () => {
         <Loader />
       ) : (
         <>
+          <MetaData title="Products || ECOMMERCE" />
           <h2 className="productsHeading">Products</h2>
           <div className="products">
             {products &&

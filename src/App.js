@@ -6,6 +6,7 @@ import Header from "./components/layout/Header/Header.js";
 import ProductDetails from "./components/product/ProductDetails/ProductDetails";
 import Products from "./components/product/Products/Products";
 import Search from "./components/product/Search/Search";
+import LoginSignup from "./components/User/LoginSignup/LoginSignup";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/products" element={<Products />}></Route>
           <Route path="/products/:keyword" element={<Products />}></Route>
           <Route path="/search" element={<Search />}></Route>
+          <Route path="/login" element={<LoginSignup />} />
         </Routes>
         <Footer />
       </Router>

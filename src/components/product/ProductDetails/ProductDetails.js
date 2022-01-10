@@ -9,6 +9,7 @@ import {
   getProductDetails,
 } from "../../../redux/actions/productAction";
 import Loader from "../../layout/Loader/Loader";
+import MetaData from "../../layout/MetaData/MetaData";
 import ReviewCard from "../ReviewCard/ReviewCard";
 import "./ProductDetails.css";
 
@@ -52,6 +53,7 @@ const ProductDetails = () => {
         <Loader />
       ) : (
         <>
+          <MetaData title={`${product.name} || ECOMMERCE`} />
           <div className="productDetails">
             <div>
               {product.images &&
